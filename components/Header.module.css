@@ -1,0 +1,84 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(14, 15, 12, 0.08);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.logo {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+.divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(14, 15, 12, 0.14);
+  flex: none;
+}
+
+.eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--body-gray);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  align-items: center;
+}
+
+.navLink {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 13px;
+  border-radius: var(--radius-pill);
+  color: var(--near-black);
+  background: transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navLink:hover {
+  background: var(--nav-hover);
+}
+
+.navLinkActive {
+  background: rgba(211, 242, 192, 0.6);
+}
+
+.registerButton {
+  margin-left: 8px;
+  font-size: 14px;
+  padding: 11px 20px;
+}

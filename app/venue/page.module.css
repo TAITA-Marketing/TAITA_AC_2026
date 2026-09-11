@@ -1,0 +1,99 @@
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 28px 0;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 0.88;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.panel {
+  margin-top: 36px;
+  background: var(--near-black);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.rule {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--wise-green);
+}
+
+.dateValue {
+  font-family: var(--font-display);
+  font-size: 38px;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.roomValue {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+.addressValue {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+.detail {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: 8px;
+}
+
+.mapsLink {
+  align-self: flex-start;
+  font-size: 15px;
+  padding: 13px 22px;
+}
+
+.cards {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--ring);
+}
+
+.cardTitle {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.cardBody {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--body-gray);
+  line-height: 1.5;
+  margin-top: 10px;
+}

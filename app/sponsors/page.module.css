@@ -1,0 +1,163 @@
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 28px 0;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 0.88;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.intro {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--body-gray);
+  margin: 20px 0 0;
+  max-width: 640px;
+}
+
+.tiers {
+  margin-top: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tierHead {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.tierName {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1;
+}
+
+.tierBar {
+  height: 10px;
+  flex: 1;
+  min-width: 40px;
+  border-radius: var(--radius-pill);
+}
+
+.slotGrid {
+  display: grid;
+  gap: 14px;
+}
+
+.slot {
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(14, 15, 12, 0.2);
+  background: var(--warm-canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-gray);
+}
+
+.apply {
+  margin-top: 52px;
+  background: var(--light-mint);
+  border-radius: var(--radius-section);
+  padding: 44px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.applyHeading {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3vw, 46px);
+  line-height: 0.9;
+  margin: 0;
+  color: var(--dark-green);
+}
+
+.applyBody {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--dark-green);
+  line-height: 1.5;
+  margin: 16px 0 0;
+  max-width: 520px;
+}
+
+.applyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.emailButton {
+  font-size: 17px;
+  padding: 16px 26px;
+}
+
+.pendingChip {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark-green);
+  background: rgba(22, 51, 0, 0.1);
+  padding: 14px 20px;
+  border-radius: var(--radius-pill);
+}
+
+.beforeCard {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: var(--ring);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.beforeHeading {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--body-gray);
+}
+
+.noteRow {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.noteDot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--wise-green);
+  margin-top: 8px;
+}
+
+.noteText {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--body-gray);
+  line-height: 1.5;
+}
+
+@media (max-width: 860px) {
+  .apply {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,131 @@
+:root {
+  --wise-green: #9fe870;
+  --green-hover: #cdffad;
+  --light-mint: #e2f6d5;
+  --nav-hover: rgba(211, 242, 192, 0.45);
+  --dark-green: #163300;
+  --near-black: #0e0f0c;
+  --body-gray: #454745;
+  --muted-gray: #868685;
+  --canvas: #ffffff;
+  --warm-canvas: #faf9f7;
+  --overlay: rgba(22, 51, 0, 0.08);
+  --hairline: rgba(14, 15, 12, 0.12);
+  --danger: #d03238;
+  --danger-bg: #fde7e8;
+
+  --font-display: var(--font-archivo-black), Helvetica, Arial, sans-serif;
+  --font-body: var(--font-inter), Helvetica, Arial, sans-serif;
+
+  --radius-pill: 9999px;
+  --radius-sm: 16px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-section: 40px;
+
+  --ring: var(--hairline) 0 0 0 1px;
+  --ring-focus: rgb(134, 134, 133) 0 0 0 1px;
+
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --container: 1240px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--near-black);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.18px;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "calt" 1;
+}
+
+a {
+  color: var(--dark-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--near-black);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.pillButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: transform 120ms var(--ease);
+}
+
+.pillButton:hover {
+  transform: scale(1.05);
+}
+
+.pillButton:active {
+  transform: scale(0.95);
+}
+
+.pillButton--primary {
+  background: var(--wise-green);
+  color: var(--dark-green);
+}
+
+.pillButton--primary:hover {
+  background: var(--green-hover);
+}
+
+.pillButton--ghost {
+  background: var(--overlay);
+  color: var(--near-black);
+}
+
+.pillButton--dark {
+  background: var(--near-black);
+  color: var(--wise-green);
+}
+
+.ring {
+  box-shadow: var(--ring);
+}
+
+@keyframes taitaRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .container {
+    padding: 0 20px;
+  }
+}

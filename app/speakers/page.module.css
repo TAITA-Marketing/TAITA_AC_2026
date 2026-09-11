@@ -1,0 +1,134 @@
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 28px 0;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.4vw, 84px);
+  line-height: 0.88;
+  margin: 0;
+}
+
+.intro {
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--body-gray);
+  margin: 20px 0 0;
+  max-width: 620px;
+}
+
+.grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--ring);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card--highlight {
+  background: var(--light-mint);
+}
+
+.photoArea {
+  aspect-ratio: 4 / 5;
+  border-bottom: 1px solid rgba(14, 15, 12, 0.1);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+  padding: 20px;
+}
+
+.initials {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  background: var(--light-mint);
+  color: var(--dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+}
+
+.photoNote {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted-gray);
+  line-height: 1.4;
+}
+
+.body {
+  padding: 22px 24px 26px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.role {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-green);
+  margin-top: 6px;
+}
+
+.bio {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--body-gray);
+  line-height: 1.5;
+  margin-top: 12px;
+}
+
+.track {
+  margin-top: 16px;
+}
+
+.trackPill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--overlay);
+  color: var(--dark-green);
+}
+
+.footerStrip {
+  margin-top: 28px;
+  background: var(--warm-canvas);
+  border-radius: var(--radius-md);
+  padding: 26px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerStripText {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.emailButton {
+  font-size: 15px;
+  padding: 12px 20px;
+}

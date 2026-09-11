@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<style>
+body{margin:0;background:#ffffff;color:#0e0f0c;font-family:Inter,Helvetica,Arial,sans-serif;font-weight:600;letter-spacing:.18px;-webkit-font-smoothing:antialiased;font-feature-settings:"calt" 1}
+*{box-sizing:border-box}
+a{color:#163300;text-decoration:underline;text-underline-offset:3px}
+a:hover{color:#0e0f0c}
+@keyframes taitaRise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" fill="#0e0f0c"></rect><text x="100" y="96" text-anchor="middle" font-family="Archivo Black, Inter, sans-serif" font-size="34" font-weight="900" fill="#9fe870">TAITA</text><text x="100" y="126" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Oct 3, 2026</text></svg></template>
+<div style="min-height:100vh;display:flex;flex-direction:column;background:#ffffff">
+
+<header style="position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid rgba(14,15,12,.08)">
+<div style="max-width:1240px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:14px;min-width:0">
+<img src="assets/taita-logo.png" alt="TAITA" style="height:34px;width:auto;display:block">
+<div style="width:1px;height:28px;background:rgba(14,15,12,.14)"></div>
+<div style="font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:#454745;line-height:1.3">Annual Conference<br>Oct 3, 2026</div>
+</div>
+<nav style="display:flex;flex-wrap:wrap;gap:2px;align-items:center">
+<sc-for list="{{ navItems }}" as="item" hint-placeholder-count="7">
+<button type="button" onClick="{{ item.go }}" style="border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;padding:9px 13px;border-radius:9999px;color:#0e0f0c;background:{{ item.bg }}" style-hover="background:rgba(211,242,192,.45)">{{ item.label }}</button>
+</sc-for>
+<button type="button" onClick="{{ goRegister }}" style="margin-left:8px;border:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;padding:11px 20px;border-radius:9999px;background:#9fe870;color:#163300;transition:transform 120ms cubic-bezier(.4,0,.2,1)" style-hover="transform:scale(1.05);background:#cdffad" style-active="transform:scale(.95)">Register</button>
+</nav>
+</div>
+</header>
+
+<main style="flex:1">
+
+<!-- ============ HOME ============ -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<div>
+<section style="max-width:1240px;margin:0 auto;padding:56px 28px 24px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center">
+<div>
+<div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:#e2f6d5;color:#163300;border-radius:9999px;font-size:13px;font-weight:700;margin-bottom:22px">● TAITA Annual Conference · Silicon Valley</div>
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-weight:900;font-size:clamp(44px,6.2vw,92px);line-height:.86;letter-spacing:-1px;margin:0;text-wrap:balance">Hybrid quantum<br>classical<br>computing.</h1>
+<p style="font-size:20px;font-weight:400;line-height:1.44;color:#454745;margin:26px 0 0;max-width:520px">Shaping the next decade of intelligence, computing, and global innovation. One afternoon, 200+ builders, and the corridor between Taiwan and Silicon Valley.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px">
+<button type="button" onClick="{{ goRegister }}" style="border:none;cursor:pointer;font-family:inherit;font-size:19px;font-weight:600;padding:18px 28px;border-radius:9999px;background:#9fe870;color:#163300;transition:transform 120ms cubic-bezier(.4,0,.2,1)" style-hover="transform:scale(1.05);background:#cdffad" style-active="transform:scale(.95)">Register on Zeffy →</button>
+<button type="button" onClick="{{ goAgenda }}" style="border:none;cursor:pointer;font-family:inherit;font-size:19px;font-weight:600;padding:18px 28px;border-radius:9999px;background:rgba(22,51,0,.08);color:#0e0f0c;transition:transform 120ms cubic-bezier(.4,0,.2,1)" style-hover="transform:scale(1.05)" style-active="transform:scale(.95)">See the agenda</button>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:28px;margin-top:38px;padding-top:26px;border-top:1px solid rgba(14,15,12,.12)">
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:34px;line-height:.9;color:#0e0f0c">Oct 3</div><div style="font-size:13px;font-weight:600;color:#454745;margin-top:6px">Saturday, 2026 · Conference 12–5 PM · Banquet 6–9 PM</div></div>
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:34px;line-height:.9;color:#0e0f0c">Delta Hotels</div><div style="font-size:13px;font-weight:600;color:#454745;margin-top:6px">Santa Clara, Silicon Valley</div></div>
+<sc-if value="{{ showCountdown }}" hint-placeholder-val="{{ true }}">
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:34px;line-height:.9;color:#163300">{{ daysLeft }}</div><div style="font-size:13px;font-weight:600;color:#454745;margin-top:6px">days to go</div></div>
+</sc-if>
+</div>
+</div>
+<div style="border-radius:30px;overflow:hidden;box-shadow:rgba(14,15,12,.12) 0 0 0 1px;background:#faf9f7">
+<img src="assets/flyer-main.jpg" alt="TAITA Annual Conference 2026 — Hybrid quantum classical computing" style="display:block;width:100%;height:auto">
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<div style="background:#9fe870;border-radius:40px;padding:52px 44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px">
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(48px,5vw,84px);line-height:.85;color:#163300">200+</div><div style="font-size:17px;font-weight:600;color:#163300;margin-top:10px">attendees expected</div></div>
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(48px,5vw,84px);line-height:.85;color:#163300">12</div><div style="font-size:17px;font-weight:600;color:#163300;margin-top:10px">speakers &amp; panelists</div></div>
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(48px,5vw,84px);line-height:.85;color:#163300">6</div><div style="font-size:17px;font-weight:600;color:#163300;margin-top:10px">sessions in one afternoon</div></div>
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(48px,5vw,84px);line-height:.85;color:#163300">23</div><div style="font-size:17px;font-weight:600;color:#163300;margin-top:10px">years connecting Taiwan &amp; SV</div></div>
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:72px 28px 0">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:26px">
+<h2 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(30px,3.4vw,52px);line-height:.9;margin:0">Four themes.<br>One decade ahead.</h2>
+<p style="font-size:16px;font-weight:400;color:#454745;margin:0;max-width:420px">Every session ties back to the same question: what does Taiwan build next, and who builds it with us.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+<div style="background:#e2f6d5;border-radius:30px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="width:46px;height:46px;border-radius:9999px;background:#0e0f0c;color:#9fe870;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:19px">01</div>
+<div><div style="font-size:25px;font-weight:600;letter-spacing:-.4px;line-height:1.15">Quantum computing</div><div style="font-size:15px;font-weight:400;margin-top:10px;line-height:1.45;color:#163300">Chip-scale photonics, error correction, and the road to useful qubits.</div></div>
+</div>
+<div style="background:#ffffff;border-radius:30px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="width:46px;height:46px;border-radius:9999px;background:#0e0f0c;color:#9fe870;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:19px">02</div>
+<div><div style="font-size:25px;font-weight:600;letter-spacing:-.4px;line-height:1.15">Classical computing</div><div style="font-size:15px;font-weight:400;margin-top:10px;line-height:1.45;color:#454745">Advanced packaging, HBM, and the silicon supply chain behind AI.</div></div>
+</div>
+<div style="background:#0e0f0c;color:#fff;border-radius:30px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="width:46px;height:46px;border-radius:9999px;background:#9fe870;color:#163300;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:19px">03</div>
+<div><div style="font-size:25px;font-weight:600;letter-spacing:-.4px;line-height:1.15">AI &amp; intelligence</div><div style="font-size:15px;font-weight:400;margin-top:10px;line-height:1.45;color:rgba(255,255,255,.85)">Agents in production, inference economics, and hardware co-design.</div></div>
+</div>
+<div style="background:#cdffad;border-radius:30px;padding:30px;min-height:250px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="width:46px;height:46px;border-radius:9999px;background:#0e0f0c;color:#9fe870;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:19px">04</div>
+<div><div style="font-size:25px;font-weight:600;letter-spacing:-.4px;line-height:1.15">Global innovation</div><div style="font-size:15px;font-weight:400;margin-top:10px;line-height:1.45;color:#163300">Cross-border startups, capital, and the talent bridge both ways.</div></div>
+</div>
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:72px 28px 0">
+<div style="background:#faf9f7;border-radius:40px;padding:44px;display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:40px;align-items:center">
+<div style="position:relative;aspect-ratio:1054/1492;border-radius:24px;overflow:hidden;box-shadow:rgba(14,15,12,.12) 0 0 0 1px;background:#fff">
+<img src="assets/flyer-wang.png" alt="Keynote flyer — Mei-Hua Wang" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ sp0Opacity }};transition:opacity 600ms cubic-bezier(.4,0,.2,1)">
+<img src="assets/flyer-wu.png" alt="Speaker flyer — Dr. Tsung-Han Wu" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ sp1Opacity }};transition:opacity 600ms cubic-bezier(.4,0,.2,1)">
+<img src="assets/flyer-manaloto.png" alt="Speaker flyer — Nardo Manaloto" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:{{ sp2Opacity }};transition:opacity 600ms cubic-bezier(.4,0,.2,1)">
+</div>
+<div>
+<div style="display:inline-flex;padding:5px 12px;background:#0e0f0c;color:#9fe870;border-radius:9999px;font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase">{{ featuredTag }}</div>
+<h3 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(28px,3.2vw,46px);line-height:.92;margin:16px 0 6px">{{ featuredName }}</h3>
+<div style="font-size:17px;font-weight:700;color:#163300">{{ featuredRole }}</div>
+<div style="font-size:19px;font-weight:600;letter-spacing:-.3px;margin-top:14px">{{ featuredTalk }}</div>
+<p style="font-size:16px;font-weight:400;line-height:1.5;color:#454745;margin:12px 0 0;max-width:620px">{{ featuredBio }}</p>
+<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:24px">
+<button type="button" onClick="{{ goSpeakers }}" style="border:none;cursor:pointer;font-family:inherit;font-size:16px;font-weight:600;padding:14px 22px;border-radius:9999px;background:#9fe870;color:#163300;transition:transform 120ms cubic-bezier(.4,0,.2,1)" style-hover="transform:scale(1.05);background:#cdffad" style-active="transform:scale(.95)">View all speakers →</button>
+<div style="display:flex;gap:8px">
+<sc-for list="{{ featuredDots }}" as="d" hint-placeholder-count="3">
+<button type="button" onClick="{{ d.go }}" aria-label="{{ d.label }}" style="border:none;cursor:pointer;padding:0;height:8px;width:{{ d.width }};border-radius:9999px;background:{{ d.bg }};transition:width 200ms cubic-bezier(.4,0,.2,1)"></button>
+</sc-for>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:72px 28px 0">
+<div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px">
+<h2 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(26px,2.6vw,38px);line-height:.95;margin:0">Our sponsors</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px">
+<sc-for list="{{ logoSlots }}" as="slot" hint-placeholder-count="8">
+<div style="height:88px;border-radius:16px;border:1px dashed rgba(14,15,12,.2);background:#faf9f7;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:#868685">{{ slot.label }}</div>
+</sc-for>
+</div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:72px 28px 0">
+<div style="background:#0e0f0c;color:#fff;border-radius:40px;padding:56px 44px;display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between">
+<div>
+<h2 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(30px,3.6vw,58px);line-height:.88;margin:0">Seats are limited.<br>Tickets are not.</h2>
+<p style="font-size:17px;font-weight:400;color:rgba(255,255,255,.8);margin:14px 0 0;max-width:520px">Registration runs on Zeffy, so 100% of what you pay reaches TAITA programming.</p>
+</div>
+<button type="button" onClick="{{ goRegister }}" style="border:none;cursor:pointer;font-family:inherit;font-size:19px;font-weight:600;padding:18px 30px;border-radius:9999px;background:#9fe870;color:#163300;transition:transform 120ms cubic-bezier(.4,0,.2,1)" style-hover="transform:scale(1.05);background:#cdffad" style-active="transform:scale(.95)">Register now →</button>
+</div>
+</section>
+</div>
+</sc-if>
+
+<!-- ============ AGENDA ============ -->
+<sc-if value="{{ isAgenda }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<div style="display:inline-flex;padding:6px 14px;background:#e2f6d5;color:#163300;border-radius:9999px;font-size:13px;font-weight:700">Saturday, October 3, 2026</div>
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(40px,5.4vw,84px);line-height:.88;margin:20px 0 0">One afternoon.<br>The quantum stack.</h1>
+<p style="font-size:19px;font-weight:400;color:#454745;margin:20px 0 0;max-width:640px">The 2026 Quantum Session. Times below are tentative and confirmed slot times go live closer to the event — every row is editable in the CMS.</p>
+<div style="margin-top:44px;display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ agenda }}" as="row" hint-placeholder-count="8">
+<div style="display:grid;grid-template-columns:minmax(120px,150px) minmax(0,1fr) minmax(0,220px);gap:24px;align-items:start;background:{{ row.bg }};color:{{ row.fg }};border-radius:20px;padding:24px 26px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div>
+<div style="font-family:'Archivo Black',Inter,sans-serif;font-size:22px;line-height:1">{{ row.time }}</div>
+<div style="font-size:12px;font-weight:600;opacity:.6;margin-top:6px">{{ row.dur }}</div>
+</div>
+<div>
+<div style="font-size:21px;font-weight:600;letter-spacing:-.3px;line-height:1.25">{{ row.title }}</div>
+<div style="font-size:15px;font-weight:400;line-height:1.45;margin-top:8px;opacity:.75">{{ row.desc }}</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+<span style="font-size:12px;font-weight:700;padding:5px 12px;border-radius:9999px;background:{{ row.tagBg }};color:{{ row.tagFg }}">{{ row.track }}</span>
+<span style="font-size:13px;font-weight:600;opacity:.7">{{ row.note }}</span>
+</div>
+</div>
+</sc-for>
+</div>
+<p style="font-size:14px;font-weight:400;color:#868685;margin:22px 0 0">Agenda subject to change. Session recordings shared with registrants after the event.</p>
+</div>
+</sc-if>
+
+<!-- ============ SPEAKERS ============ -->
+<sc-if value="{{ isSpeakers }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(40px,5.4vw,84px);line-height:.88;margin:0">Who's speaking.</h1>
+<p style="font-size:19px;font-weight:400;color:#454745;margin:20px 0 0;max-width:620px">Founders, researchers, and operators working on both sides of the Pacific.</p>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px">
+<sc-for list="{{ speakers }}" as="sp" hint-placeholder-count="6">
+<div style="background:{{ sp.bg }};border-radius:30px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px;overflow:hidden;display:flex;flex-direction:column">
+<div style="aspect-ratio:4/5;border-bottom:1px solid rgba(14,15,12,.1);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:20px">
+<div style="width:64px;height:64px;border-radius:9999px;background:#e2f6d5;color:#163300;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:22px">{{ sp.initials }}</div>
+<div style="font-size:12px;font-weight:400;color:#868685;line-height:1.4">{{ sp.photoNote }}</div>
+</div>
+<div style="padding:22px 24px 26px">
+<div style="font-size:22px;font-weight:600;letter-spacing:-.3px;line-height:1.2">{{ sp.name }}</div>
+<div style="font-size:14px;font-weight:700;color:#163300;margin-top:6px">{{ sp.role }}</div>
+<div style="font-size:14px;font-weight:400;color:#454745;line-height:1.5;margin-top:12px">{{ sp.bio }}</div>
+<div style="margin-top:16px"><span style="font-size:12px;font-weight:700;padding:5px 12px;border-radius:9999px;background:rgba(22,51,0,.08);color:#163300">{{ sp.track }}</span></div>
+</div>
+</div>
+</sc-for>
+</div>
+<div style="margin-top:28px;background:#faf9f7;border-radius:20px;padding:26px 28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<div style="font-size:17px;font-weight:600">Want to speak, or nominate someone?</div>
+<a href="mailto:marketting@taita.org" style="font-size:15px;font-weight:600;text-decoration:none;padding:12px 20px;border-radius:9999px;background:#0e0f0c;color:#9fe870">Email the program team</a>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ SPONSORS ============ -->
+<sc-if value="{{ isSponsors }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(40px,5.4vw,84px);line-height:.88;margin:0">Sponsor the<br>corridor.</h1>
+<p style="font-size:19px;font-weight:400;color:#454745;margin:20px 0 0;max-width:640px">TAITA's annual conference puts your brand in front of Taiwanese-American engineering leadership, semiconductor and AI founders, and the investors who back them.</p>
+
+<div style="margin-top:44px;display:flex;flex-direction:column;gap:30px">
+<sc-for list="{{ tiers }}" as="tier" hint-placeholder-count="3">
+<div>
+<div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px">
+<div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(24px,2.6vw,36px);line-height:1">{{ tier.name }}</div>
+<div style="height:10px;flex:1;min-width:40px;border-radius:9999px;background:{{ tier.bar }}"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax({{ tier.slotWidth }},1fr));gap:14px">
+<sc-for list="{{ tier.slots }}" as="slot" hint-placeholder-count="3">
+<div style="height:{{ tier.slotHeight }};border-radius:16px;border:1px dashed rgba(14,15,12,.2);background:#faf9f7;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;font-size:12px;font-weight:600;color:#868685">{{ slot.label }}</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div id="apply" style="margin-top:52px;background:#e2f6d5;border-radius:40px;padding:44px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center">
+<div>
+<h2 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(28px,3vw,46px);line-height:.9;margin:0;color:#163300">Apply to sponsor</h2>
+<p style="font-size:16px;font-weight:400;color:#163300;line-height:1.5;margin:16px 0 0;max-width:520px">Tell us a little about your team. We'll come back within three business days with availability and the full prospectus.</p>
+<div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:26px">
+<a href="mailto:marketting@taita.org" style="font-size:17px;font-weight:600;text-decoration:none;padding:16px 26px;border-radius:9999px;background:#0e0f0c;color:#9fe870">Email marketting@taita.org ↗</a>
+<span style="font-size:14px;font-weight:600;color:#163300;background:rgba(22,51,0,.10);padding:14px 20px;border-radius:9999px">Google Form link coming soon</span>
+</div>
+</div>
+<div style="background:#fff;border-radius:30px;padding:30px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#454745">Before you apply</div>
+<sc-for list="{{ applyNotes }}" as="n" hint-placeholder-count="3">
+<div style="display:flex;gap:14px;align-items:flex-start">
+<div style="flex:none;width:8px;height:8px;border-radius:9999px;background:#9fe870;margin-top:8px"></div>
+<div style="font-size:15px;font-weight:400;color:#454745;line-height:1.5">{{ n.text }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ VENUE ============ -->
+<sc-if value="{{ isVenue }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(40px,5.4vw,84px);line-height:.88;margin:0">Delta Hotels,<br>Santa Clara.</h1>
+<div style="margin-top:36px">
+<div style="background:#0e0f0c;color:#fff;border-radius:30px;padding:36px;display:flex;flex-direction:column;gap:22px">
+<div><div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9fe870">Date</div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:38px;line-height:1;margin-top:8px">Sat, Oct 3, 2026</div><div style="font-size:15px;font-weight:400;color:rgba(255,255,255,.75);margin-top:8px">Conference 12:00–5:00 PM · Banquet 6:00–9:00 PM PDT</div></div>
+<div style="height:1px;background:rgba(255,255,255,.15)"></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9fe870">Room</div><div style="font-size:22px;font-weight:600;margin-top:8px;line-height:1.3">Saratoga Ballroom</div><div style="font-size:15px;font-weight:400;color:rgba(255,255,255,.75);margin-top:8px">3,212 sq ft · seated in rounds of 10 · up to 260 guests</div></div>
+<div style="height:1px;background:rgba(255,255,255,.15)"></div>
+<div><div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9fe870">Address</div><div style="font-size:22px;font-weight:600;margin-top:8px;line-height:1.3">Delta Hotels by Marriott<br>2151 Laurelwood Rd<br>Santa Clara, CA 95054</div><div style="font-size:15px;font-weight:400;color:rgba(255,255,255,.75);margin-top:8px">10 min from SJC · Complimentary parking validation · +1 408-988-8411</div></div>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=2151+Laurelwood+Rd+Santa+Clara+CA+95054" style="align-self:flex-start;font-size:15px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:9999px;background:#9fe870;color:#163300">Open in Maps ↗</a>
+</div>
+</div>
+<div style="margin-top:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px">
+<sc-for list="{{ venueCards }}" as="c" hint-placeholder-count="3">
+<div style="background:#fff;border-radius:20px;padding:26px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="font-size:19px;font-weight:600;letter-spacing:-.3px">{{ c.title }}</div>
+<div style="font-size:15px;font-weight:400;color:#454745;line-height:1.5;margin-top:10px">{{ c.body }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ REGISTER ============ -->
+<sc-if value="{{ isRegister }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(40px,5.4vw,84px);line-height:.88;margin:0">Get your seat.</h1>
+<p style="font-size:19px;font-weight:400;color:#454745;margin:20px 0 0;max-width:620px">All tickets are processed on Zeffy. There are no platform fees, so your registration funds TAITA programming directly.</p>
+<div style="margin-top:40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px">
+<sc-for list="{{ tickets }}" as="t" hint-placeholder-count="4">
+<div style="background:{{ t.bg }};color:{{ t.fg }};border-radius:30px;padding:32px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px;display:flex;flex-direction:column;gap:16px">
+<div style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;opacity:.7">{{ t.kind }}</div>
+<div style="font-family:'Archivo Black',Inter,sans-serif;font-size:46px;line-height:.9">{{ t.price }}</div>
+<div style="font-size:15px;font-weight:400;line-height:1.5;opacity:.8;flex:1">{{ t.desc }}</div>
+<a href="https://www.zeffy.com/en-US/ticketing/2026-taita" style="text-align:center;font-size:16px;font-weight:600;text-decoration:none;padding:14px 20px;border-radius:9999px;background:{{ t.btnBg }};color:{{ t.btnFg }}">{{ t.cta }}</a>
+</div>
+</sc-for>
+</div>
+<div style="margin-top:24px;background:#e2f6d5;border-radius:30px;padding:32px 36px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+<div>
+<div style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(22px,2.2vw,32px);line-height:1;color:#163300">Not a member yet?</div>
+<div style="font-size:16px;font-weight:400;color:#163300;line-height:1.5;margin-top:10px;max-width:520px">TAITA-SV members attend the conference free, plus everything else we run through the year.</div>
+</div>
+<a href="https://taita-sv-website.vercel.app/membership" style="font-size:17px;font-weight:600;text-decoration:none;padding:16px 26px;border-radius:9999px;background:#0e0f0c;color:#9fe870">Become a member now ↗</a>
+</div>
+<div style="margin-top:24px;background:#faf9f7;border-radius:30px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px">
+<sc-for list="{{ regNotes }}" as="n" hint-placeholder-count="3">
+<div><div style="font-size:16px;font-weight:700">{{ n.title }}</div><div style="font-size:14px;font-weight:400;color:#454745;line-height:1.5;margin-top:8px">{{ n.body }}</div></div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- ============ ABOUT ============ -->
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1240px;margin:0 auto;padding:56px 28px 0">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.75fr);gap:44px;align-items:start">
+<div>
+<img src="assets/taita-logo.png" alt="TAITA" style="height:56px;width:auto;display:block;margin-bottom:24px">
+<h1 style="font-family:'Archivo Black',Inter,sans-serif;font-size:clamp(34px,4.4vw,68px);line-height:.9;margin:0">Bridging Taiwan and Silicon Valley since 2003.</h1>
+<p style="font-size:19px;font-weight:400;color:#454745;line-height:1.5;margin:24px 0 0">TAITA-SV was founded on January 3, 2003 in Santa Clara, California to strengthen collaboration between Silicon Valley and Taiwan across industrial, scientific, and technological development and investment.</p>
+<p style="font-size:19px;font-weight:400;color:#454745;line-height:1.5;margin:16px 0 0">Today we accelerate deeptech commercialization by connecting Silicon Valley market access and capital with Taiwan's world-class engineering and semiconductor ecosystem — and we help companies find the hidden talent traditional channels overlook.</p>
+<div style="margin-top:26px;background:#0e0f0c;color:#fff;border-radius:30px;padding:32px">
+<div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9fe870">Vision</div>
+<p style="font-size:20px;font-weight:600;line-height:1.4;margin:12px 0 0">A trusted platform and close-knit community where Silicon Valley and Taiwan collaborate deeply — sharing knowledge, forming enduring partnerships, and accelerating innovation through real execution.</p>
+</div>
+<a href="https://taita-sv-website.vercel.app/about" style="display:inline-block;margin-top:24px;font-size:15px;font-weight:600;text-decoration:none;padding:13px 22px;border-radius:9999px;background:rgba(22,51,0,.08);color:#0e0f0c">Read the full story on taita-sv ↗</a>
+</div>
+<div style="background:#e2f6d5;border-radius:30px;padding:32px;display:flex;flex-direction:column;gap:20px">
+<div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#163300">At a glance</div>
+<sc-for list="{{ aboutFacts }}" as="f" hint-placeholder-count="4">
+<div><div style="font-family:'Archivo Black',Inter,sans-serif;font-size:30px;line-height:1;color:#163300">{{ f.n }}</div><div style="font-size:14px;font-weight:600;color:#163300;margin-top:6px">{{ f.l }}</div></div>
+</sc-for>
+</div>
+</div>
+<div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+<sc-for list="{{ pillars }}" as="p" hint-placeholder-count="3">
+<div style="background:#fff;border-radius:30px;padding:30px;box-shadow:rgba(14,15,12,.12) 0 0 0 1px">
+<div style="width:44px;height:44px;border-radius:9999px;background:#0e0f0c;color:#9fe870;display:flex;align-items:center;justify-content:center;font-family:'Archivo Black',Inter,sans-serif;font-size:17px">{{ p.n }}</div>
+<div style="font-size:22px;font-weight:600;letter-spacing:-.3px;margin-top:20px">{{ p.title }}</div>
+<div style="font-size:15px;font-weight:400;color:#454745;line-height:1.5;margin-top:10px">{{ p.body }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+</main>
+
+<footer style="margin-top:88px;background:#0e0f0c;color:#fff;border-radius:40px 40px 0 0;padding:60px 28px 40px">
+<div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) minmax(0,.8fr);gap:36px">
+<div>
+<div style="font-family:'Archivo Black',Inter,sans-serif;font-size:34px;line-height:.9;color:#9fe870">TAITA</div>
+<div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.7);line-height:1.5;margin-top:12px">Silicon Valley Taiwanese American<br>Industrial Technology Association</div>
+<div style="display:flex;gap:10px;margin-top:22px;flex-wrap:wrap">
+<a href="https://www.linkedin.com/company/svtaita/" style="font-size:14px;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:9999px;background:rgba(255,255,255,.1);color:#fff">LinkedIn ↗</a>
+<a href="https://www.facebook.com/TAITASV" style="font-size:14px;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:9999px;background:rgba(255,255,255,.1);color:#fff">Facebook ↗</a>
+<a href="https://taita-sv-website.vercel.app" style="font-size:14px;font-weight:600;text-decoration:none;padding:10px 18px;border-radius:9999px;background:#9fe870;color:#163300">TAITA-SV site ↗</a>
+</div>
+</div>
+<div>
+<div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px">Conference</div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;align-items:start">
+<sc-for list="{{ navItems }}" as="item" hint-placeholder-count="6">
+<button type="button" onClick="{{ item.go }}" style="border:none;background:none;cursor:pointer;padding:0;font-family:inherit;font-size:14px;font-weight:600;color:rgba(255,255,255,.8);text-align:left" style-hover="color:#9fe870">{{ item.label }}</button>
+</sc-for>
+</div>
+</div>
+<div>
+<div style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px">Contact</div>
+<div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.8);line-height:1.9">
+<a href="mailto:marketting@taita.org" style="color:rgba(255,255,255,.8);text-decoration:none">marketting@taita.org</a><br>
+Santa Clara, California
+</div>
+</div>
+</div>
+<div style="max-width:1240px;margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;font-size:12px;font-weight:400;color:rgba(255,255,255,.5)">
+<div>© 2026 TAITA-SV. A 501(c)(3) non-profit. All rights reserved. · Website created and designed by <span style="color:#9fe870;font-weight:600">Louis Chen</span></div>
+<div>Registration powered by Zeffy · Content managed in Sanity</div>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showCountdown&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Home&quot;}}">
+class Component extends DCLogic {
+  state = {
+    page: 'home',
+    flyer: 0,
+    form: { company: '', contact: '', email: '', website: '' },
+    tier: 'platinum',
+    message: '',
+    status: 'idle',
+    error: '',
+    sent: null
+  };
+
+  componentDidMount() {
+    this.timer = setInterval(() => this.setState(st => ({ flyer: st.flyer + 1 })), 6000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
+  setField(key) {
+    return (e) => {
+      const v = e.target.value;
+      this.setState(s => ({ form: { ...s.form, [key]: v }, error: '' }));
+    };
+  }
+
+  submitSponsor = () => {
+    const { company, contact, email } = this.state.form;
+    if (!company.trim() || !contact.trim() || !email.trim()) {
+      this.setState({ error: 'Company, contact name, and work email are required.' });
+      return;
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.trim())) {
+      this.setState({ error: 'That email address doesn\u2019t look right.' });
+      return;
+    }
+    this.setState({ status: 'sending', error: '' });
+    // Real build: POST to /api/sponsor-inquiry (Resend email + Sanity sponsorInquiry doc)
+    setTimeout(() => {
+      const ref = 'SPN-2026-' + String(Math.floor(Math.random() * 900) + 100);
+      this.setState({ status: 'sent', sent: { email: email.trim(), ref } });
+    }, 900);
+  };
+
+  resetForm = () => {
+    this.setState({
+      form: { company: '', contact: '', email: '', website: '' },
+      tier: 'platinum', message: '', status: 'idle', error: '', sent: null
+    });
+  };
+
+  go(page) {
+    return () => {
+      this.setState({ page });
+      if (typeof window !== 'undefined') window.scrollTo(0, 0);
+    };
+  }
+
+  renderVals() {
+    const p = this.state.page;
+    const pages = [
+      ['home', 'Home'], ['about', 'About TAITA'], ['speakers', 'Speakers'],
+      ['agenda', 'Agenda'], ['venue', 'Venue'], ['sponsors', 'Sponsors']
+    ];
+    const navItems = pages.map(([id, label]) => ({
+      label, go: this.go(id),
+      bg: p === id ? 'rgba(211,242,192,.6)' : 'transparent'
+    }));
+
+    const dark = { bg: '#0e0f0c', fg: '#ffffff', tagBg: '#9fe870', tagFg: '#163300' };
+    const light = { bg: '#ffffff', fg: '#0e0f0c', tagBg: 'rgba(22,51,0,.08)', tagFg: '#163300' };
+    const mint = { bg: '#e2f6d5', fg: '#163300', tagBg: '#0e0f0c', tagFg: '#9fe870' };
+    const agenda = [
+      { time: '1:00 PM', dur: '50 min', title: 'Keynote — Scaling quantum advantage', desc: 'From superconducting qubits to real-world impact. Dr. Subodh Kulkarni, President & CEO, Rigetti Computing.', track: 'Keynote', note: 'Not yet confirmed', ...dark },
+      { time: '1:50 PM', dur: '50 min', title: 'Building the physical layer', desc: 'Photonics, detectors & secure silicon for the quantum era. Chi-Chang Kao (Stanford / SLAC) · Dr. Tsung-Han Wu (Chi3 Optics) · John Chang (Jmem Tek) · Xin-Chuan (Ryan) Wu (Intel) · Hsiao-Mei Sherry Cho (Stanford Q-FARM / SLAC).', track: 'Hardware', note: 'Panel · 5 speakers', ...light },
+      { time: '2:40 PM', dur: '40 min', title: 'Decoding quantum', desc: 'Algorithms, compilers & the road to error correction. Mingche Wang (ITRI International) · Bert de Jong (LBNL) · Min-Hsiu Hsieh (Hon Hai Research Institute) · Xin-Chuan (Ryan) Wu (Intel).', track: 'Software', note: 'Panel · 4 speakers', ...light },
+      { time: '3:20 PM', dur: '10 min', title: 'Coffee break', desc: 'Stretch, refill, and find the person you came to meet.', track: 'Break', note: 'Foyer', ...mint },
+      { time: '3:30 PM', dur: '40 min', title: 'Quantum and beyond: the next frontier of medicine', desc: 'Nardo Manaloto (Qubits Ventures) · John Cumbers, Ph.D. (SynBioBeta).', track: 'Applications', note: 'Panel · 2 speakers', ...light },
+      { time: '4:10 PM', dur: '40 min', title: 'Funding the frontier', desc: 'Investor perspectives on quantum & deep tech. Moderated by Norman Liang, Partner, Upshot Ventures.', track: 'Capital', note: 'Topic tentative · panelists TBD', ...light },
+      { time: '5:30 PM', dur: '30 min', title: 'Banquet check-in & registration', desc: 'Doors open for the evening banquet.', track: 'Banquet', note: 'Foyer', ...mint },
+      { time: '6:00 PM', dur: '3 hrs', title: 'Evening banquet & dinner keynote', desc: 'Keynote by Mei-Hua Wang, former Minister of Economic Affairs — “The New AI Era: Taiwan’s Tech Boom.” Live performance and lucky draw follow.', track: 'Banquet', note: 'Separate ticket', ...dark }
+    ];
+
+    const speakers = [
+      { name: 'Mei-Hua Wang', role: 'Former Minister of Economic Affairs, Taiwan', bio: 'Dinner keynote \u2014 \u201cThe New AI Era: Taiwan\u2019s Tech Boom.\u201d Speaking at the evening banquet.', track: 'Dinner keynote', initials: 'MW', photoNote: 'Flyer on file \u00b7 headshot welcome', bg: '#e2f6d5' },
+      { name: 'Dr. Subodh Kulkarni', role: 'President & CEO, Rigetti Computing', bio: 'Opening keynote on scaling quantum advantage from superconducting qubits to real-world impact.', track: 'Keynote · not yet confirmed', initials: 'SK', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Chi-Chang Kao, Ph.D.', role: 'Professor, Photon Science Directorate, Stanford / SLAC National Accelerator Laboratory', bio: 'Panelist on photonics, detectors, and secure silicon for the quantum era.', track: 'Hardware', initials: 'CK', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Dr. Tsung-Han Wu', role: 'Founder & CEO, Chi3 Optics', bio: 'Chip-scale quantum and optical frequency comb technologies. Ph.D. University of Arizona; nanophotonics research at NIST.', track: 'Hardware', initials: 'TW', photoNote: 'Need: headshot', bg: '#ffffff' },
+      { name: 'John Chang', role: 'CEO, Jmem Tek', bio: 'Panelist on the physical layer of quantum systems.', track: 'Hardware', initials: 'JC', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Xin-Chuan (Ryan) Wu', role: 'Senior Scientist, Intel', bio: 'Cross-listed across the hardware and algorithms panels.', track: 'Hardware · Software', initials: 'XW', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Hsiao-Mei Sherry Cho, Ph.D.', role: 'Director, Detector Microfabrication Facility & Lead Scientist, Stanford Q-FARM / SLAC', bio: 'Panelist on detectors and secure silicon.', track: 'Hardware', initials: 'HC', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Mingche Wang, Ph.D.', role: 'CEO, ITRI International Inc', bio: 'Panelist on algorithms, compilers, and the road to error correction.', track: 'Software', initials: 'MW', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Bert de Jong', role: 'Senior Scientist / Group Lead, Lawrence Berkeley National Laboratory', bio: 'Panelist on quantum algorithms and compilers.', track: 'Software', initials: 'BJ', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Min-Hsiu Hsieh, Ph.D.', role: 'Director, Quantum Computing Research Center, Hon Hai Research Institute', bio: 'Panelist on error correction and the software stack.', track: 'Software', initials: 'MH', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Nardo Manaloto', role: 'Managing Partner, Qubits Ventures', bio: 'Panelist on quantum and the next frontier of medicine.', track: 'Applications', initials: 'NM', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'John Cumbers, Ph.D.', role: 'Founder & CEO, SynBioBeta', bio: 'Panelist on quantum, biology, and the next frontier of medicine.', track: 'Applications', initials: 'JC', photoNote: 'Need: headshot + bio', bg: '#ffffff' },
+      { name: 'Norman Liang', role: 'Partner, Upshot Ventures', bio: 'Moderating the closing investor panel on quantum and deep tech.', track: 'Capital · moderator', initials: 'NL', photoNote: 'Need: headshot + bio', bg: '#ffffff' }
+    ];
+
+    const mkSlots = (n, label) => Array.from({ length: n }, () => ({ label }));
+    const tiers = [
+      { name: 'Super Diamond', bar: '#0e0f0c', slotWidth: '280px', slotHeight: '160px', slots: mkSlots(2, 'Super Diamond sponsor logo (SVG, on white)') },
+      { name: 'Diamond', bar: '#163300', slotWidth: '240px', slotHeight: '140px', slots: mkSlots(3, 'Diamond sponsor logo') },
+      { name: 'Emerald', bar: '#9fe870', slotWidth: '200px', slotHeight: '118px', slots: mkSlots(4, 'Emerald sponsor logo') },
+      { name: 'Platinum', bar: '#cdffad', slotWidth: '170px', slotHeight: '100px', slots: mkSlots(5, 'Platinum logo') },
+      { name: 'Gold', bar: '#e2f6d5', slotWidth: '150px', slotHeight: '86px', slots: mkSlots(6, 'Gold logo') }
+    ];
+
+    const applyNotes = [
+      { text: 'Deadline for logo placement in printed materials: September 5, 2026.' },
+      { text: 'Exhibit tables are assigned in the order sponsorships are confirmed.' },
+      { text: 'In-kind and community sponsorships are welcome — tell us what you have in mind.' },
+      { text: 'Full tier benefits and pricing are in the prospectus we send back.' }
+    ];
+
+
+    const f = this.state.form;
+    const sponsorFields = [
+      { label: 'Company', ph: 'Chi3 Optics', type: 'text', value: f.company, onChange: this.setField('company') },
+      { label: 'Contact name', ph: 'Full name', type: 'text', value: f.contact, onChange: this.setField('contact') },
+      { label: 'Work email', ph: 'you@company.com', type: 'email', value: f.email, onChange: this.setField('email') },
+      { label: 'Website', ph: 'company.com', type: 'text', value: f.website, onChange: this.setField('website') }
+    ];
+
+    const venueCards = [
+      { title: 'Getting there', body: '10 minutes from San José International (SJC), about 35 from SFO. On-site parking with complimentary validation codes for attendees.' },
+      { title: 'The hotel', body: 'Delta Hotels by Marriott Santa Clara Silicon Valley — 128 guest rooms and 135 suites, renovated in 2021, with an outdoor pool, gym, and pet-friendly rooms.' },
+      { title: 'Accessibility', body: 'Step-free access throughout, ADA restrooms, and reserved seating. Email us for specific accommodations.' }
+    ];
+
+    const tickets = [
+      { kind: 'TAITA member', price: 'Free', desc: 'General admission at no charge for current TAITA-SV members. Select the member ticket at checkout.', bg: '#e2f6d5', fg: '#163300', btnBg: '#0e0f0c', btnFg: '#9fe870', cta: 'Register on Zeffy ↗' },
+      { kind: 'Early bird · until Sep 13', price: '$10', desc: 'Full access to the afternoon program and networking. Only good through September 13, 2026.', bg: '#0e0f0c', fg: '#ffffff', btnBg: '#9fe870', btnFg: '#163300', cta: 'Register on Zeffy ↗' },
+      { kind: 'General admission', price: '$15', desc: 'Full access to the afternoon program and networking. Good through October 2, 2026.', bg: '#ffffff', fg: '#0e0f0c', btnBg: '#9fe870', btnFg: '#163300', cta: 'Register on Zeffy ↗' }
+    ];
+
+    const regNotes = [
+      { title: 'Why Zeffy', body: 'Zeffy charges no platform fee, so 100% of your purchase goes to TAITA-SV.' },
+      { title: 'Add a donation', body: 'You can add a tax-receipt-eligible donation to support TAITA-SV at checkout.' },
+      { title: 'Registration closes', body: 'General admission is available through October 2, the day before the event.' }
+    ];
+
+    const aboutFacts = [
+      { n: 'Jan 3, 2003', l: 'founded in Santa Clara, CA' },
+      { n: '501(c)(3)', l: 'non-profit, volunteer-led' },
+      { n: 'Deeptech', l: 'commercialization focus' },
+      { n: 'Young TAITA', l: 'students & early-career track' }
+    ];
+
+    const pillars = [
+      { n: '01', title: 'Convene', body: 'Mixers, roundtables, and member-only gatherings where engineers, founders, and investors learn from each other and show up for one another.' },
+      { n: '02', title: 'Invest', body: 'Young TAITA connects students and early-career talent with experienced operators and industry leaders who have walked the same path.' },
+      { n: '03', title: 'Execute', body: 'Structured cross-border channels that turn introductions into partnerships and ideas into shipped products.' }
+    ];
+
+
+    const featured = [
+      { tag: 'Dinner keynote', name: 'Mei-Hua Wang', role: 'Former Minister of Economic Affairs, Taiwan', talk: 'The New AI Era: Taiwan\u2019s Tech Boom', bio: 'Keynote at the evening banquet on Taiwan\u2019s position in the AI decade \u2014 industrial policy, semiconductors, and what comes after the boom.' },
+      { tag: 'Speaker', name: 'Dr. Tsung-Han Wu', role: 'Founder & CEO, Chi3 Optics', talk: 'Building the physical layer', bio: 'Pioneer in chip-scale quantum and optical frequency comb technologies. Ph.D. from the University of Arizona; nanophotonics research at NIST.' },
+      { tag: 'Speaker', name: 'Nardo Manaloto', role: 'Managing Partner, Qubits Ventures', talk: 'Quantum and beyond: the next frontier of medicine', bio: 'Investing in quantum and emerging computing technologies, with 30+ years across healthcare and deep tech leadership.' }
+    ];
+    const idx = this.state.flyer % featured.length;
+    const ft = featured[idx];
+
+    const msDay = 86400000;
+    const daysLeft = Math.max(0, Math.ceil((new Date('2026-10-03T09:00:00-07:00') - new Date()) / msDay));
+
+    return {
+      navItems,
+      goRegister: this.go('register'),
+      goAgenda: this.go('agenda'),
+      goSpeakers: this.go('speakers'),
+      goSponsors: this.go('sponsors'),
+      isHome: p === 'home', isAgenda: p === 'agenda', isSpeakers: p === 'speakers',
+      isSponsors: p === 'sponsors', isVenue: p === 'venue', isRegister: p === 'register', isAbout: p === 'about',
+      showCountdown: this.props.showCountdown ?? true,
+      daysLeft: daysLeft,
+      formOpen: this.state.status !== 'sent',
+      formSent: this.state.status === 'sent',
+      formError: this.state.error,
+      submitting: this.state.status === 'sending',
+      submitLabel: this.state.status === 'sending' ? 'Sending…' : 'Send application',
+      submitSponsor: this.submitSponsor,
+      resetForm: this.resetForm,
+      sentEmail: this.state.sent ? this.state.sent.email : '',
+      sentRef: this.state.sent ? this.state.sent.ref : '',
+      tier: this.state.tier,
+      message: this.state.message,
+      onTierChange: (e) => this.setState({ tier: e.target.value }),
+      onMessageChange: (e) => this.setState({ message: e.target.value }),
+      sp0Opacity: idx === 0 ? 1 : 0,
+      sp1Opacity: idx === 1 ? 1 : 0,
+      sp2Opacity: idx === 2 ? 1 : 0,
+      featuredTag: ft.tag,
+      featuredName: ft.name,
+      featuredRole: ft.role,
+      featuredTalk: ft.talk,
+      featuredBio: ft.bio,
+      applyNotes,
+      featuredDots: featured.map((f2, i) => ({
+        label: f2.name,
+        go: () => this.setState({ flyer: i }),
+        width: i === idx ? '26px' : '8px',
+        bg: i === idx ? '#0e0f0c' : 'rgba(14,15,12,.2)'
+      })),
+      logoSlots: Array.from({ length: 8 }, (_, i) => ({ label: 'Sponsor logo ' + (i + 1) })),
+      agenda, speakers, tiers, sponsorFields, venueCards, tickets, regNotes, aboutFacts, pillars
+    };
+  }
+}
+</script>
+</body>
+</html>

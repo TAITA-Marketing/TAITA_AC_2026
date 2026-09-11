@@ -1,0 +1,270 @@
+.hero {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 28px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: var(--light-mint);
+  color: var(--dark-green);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 22px;
+}
+
+.h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 6.2vw, 92px);
+  line-height: 0.86;
+  letter-spacing: -1px;
+  margin: 0;
+  text-wrap: balance;
+  white-space: pre-line;
+}
+
+.subhead {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.44;
+  color: var(--body-gray);
+  margin: 26px 0 0;
+  max-width: 520px;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.ctaRow .pillButtonLg {
+  font-size: 19px;
+  font-weight: 600;
+  padding: 18px 28px;
+}
+
+.factRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 38px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline);
+}
+
+.factNumber {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 0.9;
+  color: var(--near-black);
+}
+
+.factNumber--accent {
+  color: var(--dark-green);
+}
+
+.factLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--body-gray);
+  margin-top: 6px;
+}
+
+.flyerFrame {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ring);
+  background: var(--warm-canvas);
+}
+
+.flyerFrame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.section {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 72px 28px 0;
+}
+
+.sectionTight {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 56px 28px 0;
+}
+
+.statsBand {
+  background: var(--wise-green);
+  border-radius: var(--radius-section);
+  padding: 52px 44px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 5vw, 84px);
+  line-height: 0.85;
+  color: var(--dark-green);
+}
+
+.statLabel {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark-green);
+  margin-top: 10px;
+}
+
+.themesHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 26px;
+}
+
+.h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.4vw, 52px);
+  line-height: 0.9;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.themesIntro {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--body-gray);
+  margin: 0;
+  max-width: 420px;
+}
+
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.themeCard {
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--ring);
+}
+
+.themeBadge {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-pill);
+  background: var(--near-black);
+  color: var(--wise-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 19px;
+}
+
+.themeBadge--inverted {
+  background: var(--wise-green);
+  color: var(--dark-green);
+}
+
+.themeTitle {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.15;
+}
+
+.themeBody {
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+  line-height: 1.45;
+}
+
+.sponsorsHeadRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.sponsorsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 14px;
+}
+
+.sponsorSlot {
+  height: 88px;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(14, 15, 12, 0.2);
+  background: var(--warm-canvas);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted-gray);
+}
+
+.closingCta {
+  background: var(--near-black);
+  color: #fff;
+  border-radius: var(--radius-section);
+  padding: 56px 44px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closingHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3.6vw, 58px);
+  line-height: 0.88;
+  margin: 0;
+  white-space: pre-line;
+}
+
+.closingBody {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 14px 0 0;
+  max-width: 520px;
+}
+
+.closingCta .pillButtonLg {
+  font-size: 19px;
+  font-weight: 600;
+  padding: 18px 30px;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
