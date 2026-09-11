@@ -1,3 +1,4 @@
+import announcement from "./announcement";
 import eventSettings from "./eventSettings";
 import flyer from "./flyer";
 import session from "./session";
@@ -8,6 +9,7 @@ import sponsorTier from "./sponsorTier";
 import ticket from "./ticket";
 
 export const schemaTypes = [
+  announcement,
   flyer,
   speaker,
   session,

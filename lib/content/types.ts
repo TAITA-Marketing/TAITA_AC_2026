@@ -1,3 +1,9 @@
+export type Announcement = {
+  message: string;
+  ctaLabel: string | null;
+  ctaUrl: string | null;
+};
+
 export type NavItem = {
   label: string;
   href: string;

@@ -1,0 +1,35 @@
+.bar {
+  background: var(--light-mint);
+  border-bottom: 1px solid rgba(14, 15, 12, 0.08);
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 12px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.message {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--dark-green);
+}
+
+.cta {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--dark-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+
+.cta:hover {
+  color: var(--near-black);
+}

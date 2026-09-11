@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo_Black, Inter } from "next/font/google";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import "./globals.css";
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#fff" }}>
           <Header />
+          <AnnouncementBanner />
           <main style={{ flex: 1 }}>{children}</main>
           <Footer />
         </div>
