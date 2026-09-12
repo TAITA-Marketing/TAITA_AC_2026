@@ -11,6 +11,12 @@ export default defineType({
     defineField({ name: "ctaLabel", title: "CTA label", type: "string" }),
     defineField({ name: "ctaUrl", title: "CTA URL", type: "url" }),
     defineField({ name: "isActive", title: "Active", type: "boolean", initialValue: false }),
+    defineField({
+      name: "expiresAt",
+      title: "Expires at",
+      type: "datetime",
+      description: "Optional. Once this time passes, the banner stops showing even if Active is still on.",
+    }),
   ],
   preview: {
     select: { title: "message", active: "isActive" },
